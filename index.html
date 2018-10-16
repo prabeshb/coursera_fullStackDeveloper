@@ -31,9 +31,48 @@
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
+                <span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in">Login</span>
+                    </a>
+                </span>
             </div>
         </div>
     </nav>
+
+    <!-- Modal starts here -->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <form class="form-inline">
+                                <label class="sr-only" for="inlineFormInputName2">Name</label>
+                                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Username">
+                              
+                                <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                                <div class="input-group mb-2 mr-sm-2">
+                                  <input type="password" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Password">
+                                </div>
+                              
+                                <div class="form-check mb-2 mr-sm-2">
+                                  <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                  <label class="form-check-label" for="inlineFormCheck">
+                                    Remember me
+                                  </label>
+                                </div>
+                              
+                                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                              </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="jumbotron">
         <div class="container">
@@ -47,7 +86,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-2">
                             <p style="padding:10px;"></p>
-                            <a class="btn btn-block btn-warning" href="#reserve">Reserve Table</a>
+                            <a class="btn btn-block btn-warning" href="#reserve" data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+123 234324</strong>" data-placement="bottom">Reserve Table</a>
                         </div>
             </div>
         </div>
@@ -210,8 +249,13 @@
     </footer>
  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/po>pper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </body>
 
 </html>
